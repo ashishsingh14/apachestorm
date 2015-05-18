@@ -20,8 +20,8 @@ public class LearningStormTopology {
 	public static void main(String[] args) throws  AlreadyAliveException, InvalidTopologyException { 
 		// create an instance of TopologyBuilder class 
 		TopologyBuilder builder = new TopologyBuilder(); // set the spout class 
-		builder.setSpout("LearningStormSpout", new LearningStormSpout(), 2); // set the bolt class 
-		builder.setBolt("LearningStormBolt", new LearningStormBolt(), 4).shuffleGrouping ("LearningStormSpout");
+		builder.setSpout("LearningStormSpout", new LearningStormSpout(), 1); // set the bolt class 
+		builder.setBolt("LearningStormBolt", new LearningStormBolt(), 1).shuffleGrouping ("LearningStormSpout");
 		
 		Config conf = new Config(); 
 		conf.setDebug(true);
